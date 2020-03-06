@@ -1,7 +1,7 @@
 print("Initiating boot sequence")
-print("Saving data")
-
+print("Setting up command sequences")
 knowncommands = ["test","exit"]
+print("Writing functions")
 def commandnum(enteredcommand, thelistofknowncommands):
     if enteredcommand in thelistofknowncommands:
         loop = True
@@ -13,6 +13,7 @@ def commandnum(enteredcommand, thelistofknowncommands):
             else:
                 x = x + 1
 exit = False
+print("Ready.")
 while exit != True:
     cmd = commandnum(raw_input("Enter your command: "), knowncommands)
     if cmd == 0:
