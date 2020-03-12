@@ -1,10 +1,13 @@
 print("Initiating boot sequence")
 print("Importing external data")
 from sys import platform
+import os
+os.remove("results.txt")
+text_file = open("results.txt", "w")
 if platform == "linux" or platform == "linux2":
-	os = "linux"
+	ops = "linux"
 elif platform == "win32" or platform == "win64":
-	os = "windows"
+	ops = "windows"
 import random
 print("Setting up command sequences")
 knowncommands = ["test","exit","coinflip"]
@@ -22,9 +25,9 @@ def commandnum(enteredcommand, thelistofknowncommands):
 exit = False
 print("Ready.")
 while exit != True:
-    if os == "linux":
+    if ops == "linux":
         cmd = commandnum(raw_input("Enter your command: "), knowncommands)
-    elif os == "windows":
+    elif ops == "windows":
         cmd = commandnum(str(input("Enter your command: ")), knowncommands)
     if cmd == 0:
         print("Testing was successful")
@@ -39,6 +42,9 @@ while exit != True:
             elif flip == 2: listof.append("Tails")
             else: print("Somethings wrong, press CTRL + C")
         for y in listof:
-            print(y)
+            text_file.write(y)
+            text_file.write("\n")
+        text_file.close()
+        print("Your results have been saved in results.txt")
 print("Goodbye!")
 
