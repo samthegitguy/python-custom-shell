@@ -3,7 +3,6 @@ print("Importing external data")
 from sys import platform
 import os
 os.remove("results.txt")
-text_file = open("results.txt", "w")
 if platform == "linux" or platform == "linux2":
 	ops = "linux"
 elif platform == "win32" or platform == "win64":
@@ -36,11 +35,12 @@ while exit != True:
     elif cmd == 2:
 	flips = input("How Many Flips?")
 	listof = []
-        while len(listof) - 1 < flips:
+        while len(listof) < flips:
             flip = random.randint(1,2)
             if flip == 1: listof.append("Heads")
             elif flip == 2: listof.append("Tails")
             else: print("Somethings wrong, press CTRL + C")
+        text_file = open("results.txt", "w")
         for y in listof:
             text_file.write(y)
             text_file.write("\n")

@@ -1,6 +1,8 @@
-Heads
 Tails
 Heads
-Tails
 Heads
 Tails
+Tails
+Tails
+Tails
+Heads
