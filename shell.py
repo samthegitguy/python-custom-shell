@@ -31,17 +31,14 @@ while exit != True:
     elif cmd == 1:
         exit = True
     elif cmd == 2:
-        flips = input("How many coins would you like to flip?")
-        y = 0
-        while y > flips:
-            flip = random.choice("H","T")
-            if (flip == "H"):
-                print("Heads")
-            elif (flip == "T"):
-                print("Tails")
-            else:
-                print("Something's wrong.")
-            y = y + 1
-            print("test")
+	flips = input("How Many Flips?")
+	listof = []
+        while len(listof) - 1 < flips:
+            flip = random.randint(1,2)
+            if flip == 1: listof.append("Heads")
+            elif flip == 2: listof.append("Tails")
+            else: print("Somethings wrong, press CTRL + C")
+        for y in listof:
+            print(y)
 print("Goodbye!")
 
