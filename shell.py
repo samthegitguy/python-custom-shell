@@ -1,7 +1,10 @@
 print("Initiating boot sequence")
+print("Preparing preboot required files")
+text_file = open("results.txt", "w")
 print("Importing external data")
 from sys import platform
 import os
+import random
 os.remove("results.txt")
 if platform == "linux" or platform == "linux2":
 	ops = "linux"
@@ -32,19 +35,6 @@ while exit != True:
         print("Testing was successful")
     elif cmd == 1:
         exit = True
-    elif cmd == 2:
-	flips = input("How Many Flips?")
-	listof = []
-        while len(listof) < flips:
-            flip = random.randint(1,2)
-            if flip == 1: listof.append("Heads")
-            elif flip == 2: listof.append("Tails")
-            else: print("Somethings wrong, press CTRL + C")
-        text_file = open("results.txt", "w")
-        for y in listof:
-            text_file.write(y)
-            text_file.write("\n")
-        text_file.close()
-        print("Your results have been saved in results.txt")
+    elif cmd == 2: from subprograms import coinflip
 print("Goodbye!")
 
