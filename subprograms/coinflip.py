@@ -1,7 +1,7 @@
 flips = input("How Many Flips?")
 listof = []
 
-if raw_input("An additional file (other than those downloaded at the beginning of this program) is required to use this program. Y/N: >.").lower() != "y": exit()
+if raw_input("An additional file (other than those downloaded at the beginning of this program) is required to use this program. Y/N: >  ").lower() != "y": exit()
 import random
 while len(listof) < flips:
        	flip = random.randint(1,2)
