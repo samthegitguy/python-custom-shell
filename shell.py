@@ -35,6 +35,6 @@ while exit != True:
         print("Testing was successful")
     elif cmd == 1:
         exit = True
-    elif cmd == 2: from subprograms import coinflip
+    elif cmd == 2: from coinflip import coinflip
 print("Goodbye!")
 
